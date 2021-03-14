@@ -22,27 +22,28 @@
 List of available routes:
 
 **Register admin routes**:\
-`POST /api/register` - create admin user\
-Required
-- `email` (string)
-- `password` (string)
+
+| URL           | Method | What                    |
+|---------------|--------|-------------------------|
+| /api/register | POST   | Create admin user       |
 
 **Login admin routes**:\
-`POST /api/login` - login admin user\
-Required
-- `email` (string)
-- `password` (string)
+
+| URL           | Method | What                    |
+|---------------|--------|-------------------------|
+| /api/login    | POST   | Login admin user        |
 
 **Recipe routes**:\
-`GET /api/recipes` - get recipes\
-`POST /api/recipes` - create new one recipe (only Admin)\
-Required
-- `email` (string)
-- `password` (string)
-- HEADERS
-  - `Content-Type: application/json` (required for posting JSON)\
-`PATCH /api/recipes/:id` - update recipe properties (only Admin)\
-`DELETE /api/recipes/:id` - Delete recipe (only Admin)
+
+| URL           | Method | What                             |
+|---------------|--------|----------------------------------|
+| /api/recipes  | GET    | Get recipes                      |
+| /api/recipes  | POST   | Create new one recipe (Admin)    |
+| /api/recipes  | PATCH  | Update recipe properties (Admin) |
+| /api/recipes  | DELETE | Delete recipe (Admin)            |
 
 **Ingredients routes**:\
-`GET /api/ingredients` - get list of all ingredients
+
+| URL                 | Method | What                        |
+|---------------------|--------|-----------------------------|
+| /api/ingredients    | GET    | Get list of all ingredients |
