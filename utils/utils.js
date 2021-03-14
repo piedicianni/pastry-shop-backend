@@ -13,8 +13,23 @@ const getIngredientsInfo = (ingredients, ingredientsList) => {
     });
 };
 
+const priceFloat = (price, currency) => parseFloat(price.split(currency)[0]);
+const percentageOnSale = (daysOnSale) => {
+    const mapOnSalePercentage = {
+        0: 100,
+        1: 100,
+        2: 80,
+        3: 20
+    };
+    return !mapOnSalePercentage[daysOnSale] ? 0 : mapOnSalePercentage[daysOnSale];
+}
+const priceAccordingDaysOnSale = (fullPrice, daysOnSale = 1, currency = '€') => {
+    const priceAdapted = (priceFloat(fullPrice, currency) / 100) * percentageOnSale(daysOnSale);
+    return priceAdapted > 0 ? `${priceAdapted}${currency}` : 0;
+};
+
 // date utils
-const numberOfDayBetweenTwoDate = (dateFrom, dateTo) => {
+const numberOfDayBetweenTwoDate = (dateFrom, dateTo = new Date()) => {
     const oneDay = 24 * 60 * 60 * 1000;
     return Math.round(Math.abs((dateFrom - dateTo) / oneDay));
 };
@@ -23,5 +38,6 @@ module.exports = {
     ingredientsId,
     ingredientsWithinRecipes,
     getIngredientsInfo,
+    priceAccordingDaysOnSale,
     numberOfDayBetweenTwoDate
 };
