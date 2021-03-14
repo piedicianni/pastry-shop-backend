@@ -5,6 +5,7 @@ const { DB_URL, PORT } = require('./constants/params');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const recipesRouter = require('./routes/recipes');
+const ingredientsRouter = require('./routes/ingredients');
 
 // connect to database
 mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
@@ -18,6 +19,7 @@ function ready() {
     app.use('/api/register', registerRouter);
     app.use('/api/login', loginRouter);
     app.use('/api/recipes', recipesRouter);
+    app.use('/api/ingredients', ingredientsRouter);
 
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
