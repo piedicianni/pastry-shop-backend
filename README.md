@@ -7,6 +7,7 @@
 - [Mongoose](https://www.npmjs.com/package/mongoose)
 - [JsonWebToken](https://github.com/auth0/node-jsonwebtoken)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [cors](https://www.npmjs.com/package/cors)
 
 ## Application Structure
 

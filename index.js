@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const { DB_URL, PORT } = require('./constants/params');
+const cors = require('cors');
+const { DB_URL, PORT, CORS_ORIGIN } = require('./constants/params');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const recipesRouter = require('./routes/recipes');
@@ -15,6 +16,9 @@ db.once('open', () => ready());
 
 function ready() {
     app.use(express.json());
+    app.use(cors({
+        origin: CORS_ORIGIN
+    }));
 
     app.use('/api/register', registerRouter);
     app.use('/api/login', loginRouter);
