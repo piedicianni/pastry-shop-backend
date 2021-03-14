@@ -21,17 +21,17 @@
 
 List of available routes:
 
-**Register admin route**:\
-`POST /api/register` - create admin user\
+**Register admin routes**:\
+`POST /api/register` - create admin user
 
-**Login admin route**:\
-`POST /api/login` - login admin user\
+**Login admin routes**:\
+`POST /api/login` - login admin user
 
 **Recipe routes**:\
 `GET /api/recipes` - get recipes\
-`POST /api/recipes` - create new one recipe\
-`PATCH /api/recipes` - update recipe properties\
-`DELETE /api/recipes` - Delete recipe\
+`POST /api/recipes` - create new one recipe (only Admin)\
+`PATCH /api/recipes` - update recipe properties (only Admin)\
+`DELETE /api/recipes` - Delete recipe (only Admin)
 
-**Ingredients route**:\
-`GET /api/ingredients` - get list of all ingredients\
+**Ingredients routes**:\
+`GET /api/ingredients` - get list of all ingredients
