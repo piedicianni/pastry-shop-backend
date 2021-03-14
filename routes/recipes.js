@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { JWD_SECRET_KEY } = require('../constants/params');
+const { JWT_SECRET_KEY } = require('../constants/params');
 const Recipes = require('../models/recipesModel');
 const Ingredients = require('../models/ingredientsModel');
 const {
@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
                 sale: price !== 0,
                 ingredients: getIngredientsInfo(recipe.ingredients, ingredients)
             }
-        });
+        }).filter(recipe => (isAuth ? true : recipe.price !== 0));
         await Recipes.updateMany({
             _id: { $in: recipesExpired }
         }, {
@@ -99,7 +99,7 @@ function authorization(req, res, next) {
     /* const token = authHeader ? authHeader.split(' ')[1] : null;
     if (token == null) return res.status(401).json(invalidTokenMessage());
     try {
-        const admin = jwt.verify(token, JWD_SECRET_KEY);
+        const admin = jwt.verify(token, JWT_SECRET_KEY);
         if (!admin) return res.status(401).json(invalidTokenMessage());
     } catch (error) {
         return res.status(401).json(invalidTokenMessage());
@@ -113,7 +113,7 @@ const userAdminAuthorized = (authHeader) => {
     const token = authHeader ? authHeader.split(' ')[1] : null;
     if (token == null) return false;
     try {
-        const admin = jwt.verify(token, JWD_SECRET_KEY);
+        const admin = jwt.verify(token, JWT_SECRET_KEY);
         if (!admin) return false;
     } catch (error) {
         return false;

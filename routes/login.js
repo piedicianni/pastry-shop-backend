@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { JWD_SECRET_KEY } = require('../constants/params');
+const { JWT_SECRET_KEY } = require('../constants/params');
 const Admin = require('../models/adminModel');
 
 const invalidLoginMessage = () => ({ error: 'Invalid email or password.' });
@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
             const token = jwt.sign({
                 id: admin._id,
                 email: admin.email
-            }, JWD_SECRET_KEY);
+            }, JWT_SECRET_KEY);
             res.json({ authorizationToken: token });
         } else {
             res.status(401).json(invalidLoginMessage());
