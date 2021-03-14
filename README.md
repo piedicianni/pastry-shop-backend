@@ -6,7 +6,7 @@
 - [Mongodb](https://www.mongodb.com)
 - [Mongoose](https://www.npmjs.com/package/mongoose)
 - [JsonWebToken](https://github.com/auth0/node-jsonwebtoken)
-- [bcrypt](hhttps://www.npmjs.com/package/bcrypt)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## Application Structure
 
@@ -23,15 +23,26 @@ List of available routes:
 
 **Register admin routes**:\
 `POST /api/register` - create admin user
+Required
+- `email` (string)
+- `password` (string)
 
 **Login admin routes**:\
 `POST /api/login` - login admin user
+Required
+- `email` (string)
+- `password` (string)
 
 **Recipe routes**:\
 `GET /api/recipes` - get recipes\
 `POST /api/recipes` - create new one recipe (only Admin)\
-`PATCH /api/recipes` - update recipe properties (only Admin)\
-`DELETE /api/recipes` - Delete recipe (only Admin)
+Required
+- `email` (string)
+- `password` (string)
+- HEADERS
+  - `Content-Type: application/json` (required for posting JSON)
+`PATCH /api/recipes/:id` - update recipe properties (only Admin)\
+`DELETE /api/recipes/:id` - Delete recipe (only Admin)
 
 **Ingredients routes**:\
 `GET /api/ingredients` - get list of all ingredients
