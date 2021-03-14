@@ -17,7 +17,7 @@
 - `utils/` - This folder contains utils functions.
 
 
-### API Endpoints
+## API Endpoints
 
 List of available routes:
 
