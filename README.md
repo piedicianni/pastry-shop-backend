@@ -22,13 +22,13 @@
 List of available routes:
 
 **Register admin routes**:\
-`POST /api/register` - create admin user
+`POST /api/register` - create admin user\
 Required
 - `email` (string)
 - `password` (string)
 
 **Login admin routes**:\
-`POST /api/login` - login admin user
+`POST /api/login` - login admin user\
 Required
 - `email` (string)
 - `password` (string)
@@ -40,7 +40,7 @@ Required
 - `email` (string)
 - `password` (string)
 - HEADERS
-  - `Content-Type: application/json` (required for posting JSON)
+  - `Content-Type: application/json` (required for posting JSON)\
 `PATCH /api/recipes/:id` - update recipe properties (only Admin)\
 `DELETE /api/recipes/:id` - Delete recipe (only Admin)
 
