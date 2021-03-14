@@ -21,19 +21,19 @@
 
 List of available routes:
 
-**Register admin routes**:\
+**Register admin routes**:
 
 | URL           | Method | What                    |
 |---------------|--------|-------------------------|
 | /api/register | POST   | Create admin user       |
 
-**Login admin routes**:\
+**Login admin routes**:
 
 | URL           | Method | What                    |
 |---------------|--------|-------------------------|
 | /api/login    | POST   | Login admin user        |
 
-**Recipe routes**:\
+**Recipe routes**:
 
 | URL           | Method | What                             |
 |---------------|--------|----------------------------------|
@@ -42,7 +42,7 @@ List of available routes:
 | /api/recipes  | PATCH  | Update recipe properties (Admin) |
 | /api/recipes  | DELETE | Delete recipe (Admin)            |
 
-**Ingredients routes**:\
+**Ingredients routes**:
 
 | URL                 | Method | What                        |
 |---------------------|--------|-----------------------------|
