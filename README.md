@@ -34,14 +34,14 @@ List of available routes:
 |---------------|--------|-------------------------|
 | /api/login    | POST   | Login admin user        |
 
-**Recipe routes**:
+**Products routes**:
 
-| URL           | Method | What                             |
-|---------------|--------|----------------------------------|
-| /api/recipes  | GET    | Get recipes                      |
-| /api/recipes  | POST   | Create new one recipe (Admin)    |
-| /api/recipes  | PATCH  | Update recipe properties (Admin) |
-| /api/recipes  | DELETE | Delete recipe (Admin)            |
+| URL            | Method | What                              |
+|----------------|--------|-----------------------------------|
+| /api/products  | GET    | Get products                      |
+| /api/products  | POST   | Create new one product (Admin)    |
+| /api/products  | PATCH  | Update product properties (Admin) |
+| /api/products  | DELETE | Delete product (Admin)            |
 
 **Ingredients routes**:
 

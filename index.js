@@ -5,7 +5,7 @@ const cors = require('cors');
 const { DB_URL, PORT, CORS_ORIGIN } = require('./constants/params');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
-const recipesRouter = require('./routes/recipes');
+const productsRouter = require('./routes/products');
 const ingredientsRouter = require('./routes/ingredients');
 
 // connect to database
@@ -22,7 +22,7 @@ function ready() {
 
     app.use('/api/register', registerRouter);
     app.use('/api/login', loginRouter);
-    app.use('/api/recipes', recipesRouter);
+    app.use('/api/products', productsRouter);
     app.use('/api/ingredients', ingredientsRouter);
 
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

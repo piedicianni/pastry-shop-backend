@@ -1,8 +1,8 @@
 // ingredients utils
 const removeDuplicateIngredients = ingredients => [...new Set(ingredients)];
 const ingredientsId = ingredients => ingredients.map(ingredient => ingredient.id);
-const ingredientsWithinRecipes = recipes => removeDuplicateIngredients(
-    recipes.map(recipe => ingredientsId(recipe.ingredients)).flat()
+const ingredientsIdWithinProducts = products => removeDuplicateIngredients(
+    products.map(product => ingredientsId(product.ingredients)).flat()
 );
 const ingredientsDetails = (id, ingredientsList) => ingredientsList.find(ingredient => {
     if (String(ingredient._id) === String(id)) return ingredient;
@@ -36,7 +36,7 @@ const numberOfDayBetweenTwoDate = (dateFrom, dateTo = new Date()) => {
 
 module.exports = {
     ingredientsId,
-    ingredientsWithinRecipes,
+    ingredientsIdWithinProducts,
     getIngredientsInfo,
     priceAccordingDaysOnSale,
     numberOfDayBetweenTwoDate
