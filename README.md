@@ -36,12 +36,13 @@ List of available routes:
 
 **Products routes**:
 
-| URL            | Method | What                              |
-|----------------|--------|-----------------------------------|
-| /api/products  | GET    | Get products                      |
-| /api/products  | POST   | Create new one product (Admin)    |
-| /api/products  | PATCH  | Update product properties (Admin) |
-| /api/products  | DELETE | Delete product (Admin)            |
+| URL                | Method | What                              |
+|--------------------|--------|-----------------------------------|
+| /api/products      | GET    | Get products                      |
+| /api/products      | POST   | Create new one product (Admin)    |
+| /api/products      | PATCH  | Update product properties (Admin) |
+| /api/products      | DELETE | Delete product (Admin)            |
+| /api/products/:id  | GET    | Get specific product              |
 
 **Ingredients routes**:
 
