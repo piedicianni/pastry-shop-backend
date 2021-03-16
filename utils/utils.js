@@ -1,6 +1,6 @@
 // ingredients utils
 const removeDuplicateIngredients = ingredients => [...new Set(ingredients)];
-const ingredientsId = ingredients => ingredients.map(ingredient => ingredient.id);
+const ingredientsId = ingredients => ingredients.map(ingredient => ingredient.idRef);
 const ingredientsIdWithinProducts = products => removeDuplicateIngredients(
     products.map(product => ingredientsId(product.ingredients)).flat()
 );
@@ -9,7 +9,7 @@ const ingredientsDetails = (id, ingredientsList) => ingredientsList.find(ingredi
 });
 const getIngredientsInfo = (ingredients, ingredientsList) => {
     return ingredients.map(ingredient => {
-        return { ...ingredientsDetails(ingredient.id, ingredientsList), value: ingredient.value };
+        return { ...ingredientsDetails(ingredient.idRef, ingredientsList), idRef:ingredient.idRef, value: ingredient.value };
     });
 };
 

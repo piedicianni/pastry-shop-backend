@@ -34,6 +34,7 @@ const getIngredients = async (ids) => {
     ).lean();
     return ingredients;
 };
+const convertIdString = (idString, converter = mongoose.Types.ObjectId) => converter(idString);
 
 router.get('/', async (req, res) => {
     const authHeader = req.headers['authorization'];

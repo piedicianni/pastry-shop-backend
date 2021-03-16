@@ -11,7 +11,7 @@ const productsSchema = new mongoose.Schema({
     },
     ingredients: {
         type: [{
-            id: { type: String },
+            idRef: { type: String },
             value: { type: Number }
         }],
         required: true
