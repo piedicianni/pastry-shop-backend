@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET_KEY } = require('../constants/params');
+const { JWT_SECRET_KEY } = require('../constants/constants');
 const Products = require('../models/productsModel');
 const Ingredients = require('../models/ingredientsModel');
 const {

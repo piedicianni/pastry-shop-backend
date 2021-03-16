@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET_KEY } = require('../constants/params');
+const { JWT_SECRET_KEY } = require('../constants/constants');
 const Admin = require('../models/adminModel');
 
 const invalidLoginMessage = () => ({ error: 'Invalid email or password.' });
