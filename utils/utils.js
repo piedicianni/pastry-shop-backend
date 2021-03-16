@@ -17,9 +17,8 @@ const priceFloat = (price, currency) => parseFloat(price.split(currency)[0]);
 const percentageOnSale = (daysOnSale) => {
     const mapOnSalePercentage = {
         0: 100,
-        1: 100,
-        2: 80,
-        3: 20
+        1: 80,
+        2: 20
     };
     return !mapOnSalePercentage[daysOnSale] ? 0 : mapOnSalePercentage[daysOnSale];
 }
