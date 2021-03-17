@@ -54,4 +54,4 @@ List of available routes:
 ## Start server
 
 ### `npm start`
-Runs server on: http://localhost:3000
+Run server on: http://localhost:3000
