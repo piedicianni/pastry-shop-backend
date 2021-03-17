@@ -49,3 +49,9 @@ List of available routes:
 | URL                 | Method | What                        |
 |---------------------|--------|-----------------------------|
 | /api/ingredients    | GET    | Get list of all ingredients |
+
+
+## Start server
+
+### `npm start`
+Runs server on: http://localhost:3000
