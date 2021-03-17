@@ -51,7 +51,7 @@ List of available routes:
 | /api/ingredients    | GET    | Get list of all ingredients |
 
 
-## Start server
+## Run server
 
 ### `npm start`
-Run server on: http://localhost:3000
+Run server on: http://localhost:8000
