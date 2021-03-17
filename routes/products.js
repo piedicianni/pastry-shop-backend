@@ -79,11 +79,12 @@ router.get('/:_id', async (req, res) => {
 });
 
 router.post('/', authorization, async (req, res) => {
-    const { name, price, ingredients, sale } = req.body;
+    const { name, price, ingredients, availability, sale } = req.body;
     const product = new Products({
         name,
         price,
         ingredients,
+        availability,
         sale,
         dateOnSale: sale ? new Date() : new Date(0)
     });
@@ -96,12 +97,13 @@ router.post('/', authorization, async (req, res) => {
 });
 
 router.patch('/:_id', authorization, async (req, res) => {
-    const { name, price, ingredients: ingredientsParam, sale } = req.body;
+    const { name, price, ingredients: ingredientsParam, availability, sale } = req.body;
     try {
         const product = await Products.findById(req.params._id);
         if (name != null) product.name = name;
         if (price != null) product.price = price;
         if (ingredientsParam != null) product.ingredients = ingredientsParam;
+        if(availability != null) product.availability = availability;
         if (sale != null) {
             product.sale = sale;
             product.dateOnSale = sale ? new Date() : new Date(0);
